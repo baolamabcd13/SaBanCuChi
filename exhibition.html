@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triển lãm - Sa bàn địa đạo Củ Chi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <main class="exhibition-page">
+        <div class="exhibition-container">
+            <div class="exhibition-header" data-aos="fade-down" data-aos-duration="1000">
+                <h1>Phương tiện Quân sự</h1>
+                <p class="exhibition-subtitle">Tìm hiểu về các phương tiện quân sự được sử dụng trong thời kỳ kháng chiến</p>
+            </div>
+            
+            <div class="vehicles-showcase">
+                <div class="vehicle-item" data-category="ground" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="vehicle-image">
+                        <img src="images/m113.jpg" alt="Xe bọc thép M113">
+                    </div>
+                    <div class="vehicle-content">
+                        <h2>M113</h2>
+                        <p class="vehicle-specs">
+                            <span>Loại: Xe thiết giáp chở quân</span>
+                            <span>Trọng lượng: 12.3 tấn</span>
+                            <span>Tốc độ tối đa: 67.6 km/h</span>
+                        </p>
+                        <p class="vehicle-description">
+                            Xe thiết giáp chở quân M113 được sử dụng phổ biến trong chiến tranh Việt Nam. 
+                            Thiết kế chống mìn và khả năng cơ động cao trên mọi địa hình. Có thể chở được 11 binh sĩ 
+                            cùng 2 người điều khiển.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="vehicle-item" data-category="air" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="vehicle-image">
+                        <img src="images/uh1.jpg" alt="Trực thăng UH-1">
+                    </div>
+                    <div class="vehicle-content">
+                        <h2>UH-1 Huey</h2>
+                        <p class="vehicle-specs">
+                            <span>Loại: Trực thăng đa năng</span>
+                            <span>Tốc độ tối đa: 220 km/h</span>
+                            <span>Tầm hoạt động: 510 km</span>
+                        </p>
+                        <p class="vehicle-description">
+                            Trực thăng đa năng UH-1 "Huey" được sử dụng rộng rãi cho nhiệm vụ vận chuyển, 
+                            trinh sát và hỗ trợ hỏa lực. Có khả năng chở được 11-14 binh sĩ hoặc 6 cáng thương.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // animation chỉ chạy một lần
+            offset: 200 // khoảng cách trigger animation
+        });
+    </script>
+</body>
+<script src="script.js"></script>
+</html>
