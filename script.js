@@ -201,3 +201,31 @@ function pauseAutoSlide(slideshowIndex) {
     }
 }
 
+// Thay đổi cách xử lý slideshow
+function initSlideshow() {
+    const slideshows = document.querySelectorAll('.slideshow-container');
+    if (!slideshows.length) return;
+
+    slideshows.forEach((slideshow, index) => {
+        const images = slideshow.querySelectorAll('.model-image');
+        if (!images.length) return;
+        
+        // Preload chỉ 2 ảnh đầu tiên
+        images[0].style.display = 'block';
+        if (images[1]) {
+            const img = new Image();
+            img.src = images[1].src;
+        }
+    });
+}
+
+// Giảm số lượng animation chạy đồng thời
+AOS.init({
+    once: true,
+    offset: 120,
+    delay: 0,
+    duration: 800,
+    throttleDelay: 99,
+    disable: 'mobile' // Tắt trên mobile để tăng performance
+});
+

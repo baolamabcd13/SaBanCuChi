@@ -6,7 +6,9 @@
     <title>Nhóm thực hiện - Sa bàn địa đạo Củ Chi</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="preload" as="image" href="images/team.JPG">
+    <meta http-equiv="Cache-Control" content="max-age=31536000">
 </head>
 <body>
     <main class="team-page">
@@ -17,11 +19,23 @@
 
         <div class="team-container">
             <div class="team-image" data-aos="fade-up">
-                <img src="images/team.JPG" alt="Nhóm thực hiện" class="team-photo">
+                <img src="images/team-small.jpg"
+                     srcset="images/team-small.jpg 300w,
+                             images/team-medium.jpg 600w,
+                             images/team.JPG 1200w"
+                     sizes="(max-width: 768px) 100vw,
+                            (max-width: 1200px) 80vw,
+                            1200px"
+                     alt="Nhóm thực hiện"
+                     class="team-photo">
             </div>
             
             <div class="team-gallery" data-aos="fade-up">
-                <img src="images/DSC_0939.jpg" alt="Hoạt động nhóm 1" class="gallery-photo">
+                <img src="images/DSC_0939.jpg" alt="Hoạt động nhóm 1" 
+                     loading="lazy" 
+                     width="300" 
+                     height="200"
+                     class="gallery-photo">
                 <img src="images/DSC_0943.jpg" alt="Hoạt động nhóm 2" class="gallery-photo">
                 <img src="images/DSC_0948.jpg" alt="Hoạt động nhóm 3" class="gallery-photo">
                 <img src="images/DSC_0953.jpg" alt="Hoạt động nhóm 4" class="gallery-photo">
