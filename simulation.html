@@ -46,7 +46,13 @@
                             <div class="materials-grid">
                                 <div class="material-item">
                                     <div class="model-details">
-                                        <img src="images/MoHinhUH1.png" alt="Mô hình UH-1" class="model-image">
+                                        <div class="slideshow-container">
+                                            <img src="images/MoHinhUH1.png" alt="Mô hình UH-1" class="model-image active">
+                                            <img src="images/MoHinhUH1-2.jpg" alt="Mô hình UH-1" class="model-image">
+                                            <img src="images/MoHinhUH1-3.jpg" alt="Mô hình UH-1" class="model-image">
+                                            <button class="slide-nav prev" onclick="changeSlide(-1, 0)">&#10094;</button>
+                                            <button class="slide-nav next" onclick="changeSlide(1, 0)">&#10095;</button>
+                                        </div>
                                         <h4>Trực thăng UH-1 "Huey"</h4>
                                         <div class="model-specs">
                                             <span>Trực thăng vận tải đa năng</span>
@@ -56,7 +62,12 @@
                                 </div>
                                 <div class="material-item">
                                     <div class="model-details">
-                                        <img src="images/MoHinhM113.png" alt="Mô hình M113" class="model-image">
+                                        <div class="slideshow-container">
+                                            <img src="images/MoHinhM113.png" alt="Mô hình M113" class="model-image active">
+                                            <img src="images/MoHinhM113-1.jpg" alt="Mô hình M113" class="model-image">
+                                            <button class="slide-nav prev" onclick="changeSlide(-1, 1)">&#10094;</button>
+                                            <button class="slide-nav next" onclick="changeSlide(1, 1)">&#10095;</button>
+                                        </div>
                                         <h4>Xe thiết giáp M113</h4>
                                         <div class="model-specs">
                                             <span>Xe bọc thép chở quân</span>
@@ -102,46 +113,78 @@
                 </div>
             </section>
 
-            <!-- Bước 3 với thiết kế mới -->
-            <section class="process-step step-03" data-aos="fade-up">
+            <!-- Bước 3 -->
+            <section class="process-step" data-aos="fade-up">
                 <div class="step-number">03</div>
                 <div class="step-content">
                     <h2>Hoàn thiện chi tiết</h2>
-                    <div class="layout-grid">
-                        <div class="layout-card">
-                            <div class="layout-image">
-                                <img src="images/underground_layout.png" alt="Bố trí địa đạo">
+                    
+                    <!-- Timeline Progress -->
+                    <div class="timeline-progress">
+                        <div class="progress-step active" data-step="1">
+                            <div class="progress-icon">🏗️</div>
+                            <span>Cấu trúc</span>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step" data-step="2">
+                            <div class="progress-icon">🎨</div>
+                            <span>Bề mặt</span>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step" data-step="3">
+                            <div class="progress-icon">🏠</div>
+                            <span>Nội thất</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="underground-content">
+                        <!-- Main Images -->
+                        <div class="main-showcase">
+                            <div class="showcase-left">
+                                <img src="images/Underground1.jpg" alt="Tổng quan địa đạo" class="main-image">
+                                <div class="image-overlay">
+                                    <h3>Tổng quan địa đạo</h3>
+                                    <p>Cấu trúc tổng thể và các khu vực</p>
+                                </div>
                             </div>
-                            <div class="layout-content">
-                                <h3 class="layout-title">Bố trí & Sắp xếp</h3>
-                                <div class="layout-steps">
-                                    <div class="layout-step">
-                                        <span class="step-number">01</span>
-                                        <p class="step-text">Phác thảo layout tổng thể</p>
-                                    </div>
-                                    <div class="layout-step">
-                                        <span class="step-number">02</span>
-                                        <p class="step-text">Định vị các khu vực chính</p>
-                                    </div>
+                            <div class="showcase-right">
+                                <img src="images/Underground2.jpg" alt="Chi tiết nội thất" class="main-image">
+                                <div class="image-overlay">
+                                    <h3>Thiết kế nội thất</h3>
+                                    <p>Bố trí không gian</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="layout-card">
-                            <div class="layout-image">
-                                <img src="images/arrange1.png" alt="Sắp xếp nội thất">
+                        <!-- Detail Sections -->
+                        <div class="detail-sections">
+                            <div class="detail-card">
+                                <img src="images/arrange2.jpg" alt="Khu vực sinh hoạt">
+                                <div class="card-content">
+                                    <h4>Thiết kế bề mặt</h4>
+                                    <p>Bề mặt địa đạo</p>
+                                </div>
                             </div>
-                            <div class="layout-content">
-                                <h3 class="layout-title">Chi tiết</h3>
-                                <div class="layout-steps">
-                                    <div class="layout-step">
-                                        <span class="step-number">03</span>
-                                        <p class="step-text">Bố trí vật dụng sinh hoạt</p>
-                                    </div>
-                                    <div class="layout-step">
-                                        <span class="step-number">04</span>
-                                        <p class="step-text">Hoàn thiện các chi tiết nhỏ</p>
-                                    </div>
+                            <div class="detail-card">
+                                <img src="images/arrange3.jpg" alt="Không gian làm việc">
+                                <div class="card-content">
+                                    <h4>Thiết kế bề mặt</h4>
+                                    <p>Bố trí phương tiện quân sự</p>
+                                </div>
+                            </div>
+                            <div class="detail-card">
+                                <img src="images/arrange4.jpg" alt="Khu vực hội họp">
+                                <div class="card-content">
+                                    <h4>Thiết kế bề mặt</h4>
+                                    <p>Bề mặt địa đạo</p>
+                                </div>
+                            </div>
+                            <div class="detail-card">
+                                <img src="images/arrange6.jpg" alt="Lối đi nối các khu">
+                                <div class="card-content">
+                                    <h4>Thiết kế bề mặt</h4>
+                                    <p>Bố trí phương tiện quân sự</p>
                                 </div>
                             </div>
                         </div>

@@ -24,7 +24,6 @@ function createNav() {
     // Chèn navigation vào đầu body
     document.body.insertAdjacentHTML('afterbegin', navHTML);
 }
-
 // Xử lý navigation
 function initNavigation() {
     const hamburger = document.querySelector('.hamburger');
@@ -106,6 +105,45 @@ document.addEventListener('DOMContentLoaded', () => {
         );
         observer.observe(statsSection);
     }
+
+    // Khởi tạo slideshow tự động
+    const containers = document.querySelectorAll('.slideshow-container');
+    containers.forEach((container, index) => {
+        // Bắt đầu slideshow tự động
+        startAutoSlide(index);
+
+        // Dừng khi hover vào container
+        container.addEventListener('mouseenter', () => {
+            pauseAutoSlide(index);
+        });
+
+        // Tiếp tục khi rời chuột khỏi container
+        container.addEventListener('mouseleave', () => {
+            startAutoSlide(index);
+        });
+
+        // Cập nhật xử lý click cho các nút điều hướng
+        const prevBtn = container.querySelector('.prev');
+        const nextBtn = container.querySelector('.next');
+
+        if (prevBtn) {
+            prevBtn.onclick = (e) => {
+                e.stopPropagation();
+                changeSlide(-1, index);
+                // Khởi động lại slideshow tự động
+                startAutoSlide(index);
+            };
+        }
+
+        if (nextBtn) {
+            nextBtn.onclick = (e) => {
+                e.stopPropagation();
+                changeSlide(1, index);
+                // Khởi động lại slideshow tự động
+                startAutoSlide(index);
+            };
+        }
+    });
 });
 
 // Thêm keyframes animation
@@ -125,3 +163,41 @@ const fadeIn = `
 const style = document.createElement('style');
 style.textContent = fadeIn;
 document.head.appendChild(style);
+
+let currentSlides = [0, 0]; // Theo dõi slide hiện tại cho mỗi slideshow
+let slideIntervals = []; // Mảng lưu các interval
+
+function changeSlide(direction, slideshowIndex) {
+    const containers = document.querySelectorAll('.slideshow-container');
+    const slides = containers[slideshowIndex].querySelectorAll('.model-image');
+    
+    // Ẩn slide hiện tại
+    slides[currentSlides[slideshowIndex]].classList.remove('active');
+    
+    // Tính toán slide tiếp theo
+    currentSlides[slideshowIndex] = (currentSlides[slideshowIndex] + direction + slides.length) % slides.length;
+    
+    // Hiển thị slide mới
+    slides[currentSlides[slideshowIndex]].classList.add('active');
+}
+
+// Hàm bắt đầu slideshow tự động
+function startAutoSlide(slideshowIndex) {
+    // Xóa interval cũ nếu có
+    if (slideIntervals[slideshowIndex]) {
+        clearInterval(slideIntervals[slideshowIndex]);
+    }
+    
+    // Tạo interval mới
+    slideIntervals[slideshowIndex] = setInterval(() => {
+        changeSlide(1, slideshowIndex);
+    }, 3000); // Thay đổi từ 1500 thành 3000 (3 giây)
+}
+
+// Hàm dừng slideshow
+function pauseAutoSlide(slideshowIndex) {
+    if (slideIntervals[slideshowIndex]) {
+        clearInterval(slideIntervals[slideshowIndex]);
+    }
+}
+
